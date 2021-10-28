@@ -498,6 +498,7 @@ MonoBehaviour:
   angryTimer: 3
   madAnimSpeed: 0
   requiredWaveType: WaveyWave
+  NPCSUI: {fileID: 0}
   objectVar: 1
   relatedBridge: {fileID: 1007695381}
   animator: {fileID: 0}
@@ -985,6 +986,72 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1108613989
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1108613992}
+  - component: {fileID: 1108613991}
+  - component: {fileID: 1108613990}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1108613990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1108613989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &1108613991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1108613989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &1108613992
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1108613989}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1161865384
 GameObject:
   m_ObjectHideFlags: 0
@@ -1140,6 +1207,7 @@ MonoBehaviour:
   angryTimer: 0
   madAnimSpeed: 0
   requiredWaveType: Simple
+  NPCSUI: {fileID: 0}
   objectVar: 0
   relatedDoor: {fileID: 1955057067}
 --- !u!1 &1367291964
@@ -1199,6 +1267,39 @@ Transform:
   m_Father: {fileID: 197120086}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1659712931 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 640486511387428053, guid: 542d667c6f0104f45bd3e43d619103c5, type: 3}
+  m_PrefabInstance: {fileID: 6034140209323057870}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b52e17a7271a47b4d88bdf32b5b97679, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1718740927 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 175858398596381036, guid: 542d667c6f0104f45bd3e43d619103c5, type: 3}
+  m_PrefabInstance: {fileID: 6034140209323057870}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b52e17a7271a47b4d88bdf32b5b97679, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1880525279 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8330279424524033673, guid: 542d667c6f0104f45bd3e43d619103c5, type: 3}
+  m_PrefabInstance: {fileID: 6034140209323057870}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b52e17a7271a47b4d88bdf32b5b97679, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1938476666 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7138774540439690606, guid: 73f1dd8a35acbba4cbbd3669b51cf45b, type: 3}
@@ -1273,6 +1374,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 650441945129158294, guid: 771e2859f140e8a4a837b0b273abd2b4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2008629391560683525, guid: 771e2859f140e8a4a837b0b273abd2b4, type: 3}
       propertyPath: m_Name
       value: DoorNPC Test
@@ -1325,10 +1430,6 @@ PrefabInstance:
       propertyPath: relatedDoor
       value: 
       objectReference: {fileID: 1955057067}
-    - target: {fileID: 2008629391560683544, guid: 771e2859f140e8a4a837b0b273abd2b4, type: 3}
-      propertyPath: requiredWaveType
-      value: WaveyWave
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 771e2859f140e8a4a837b0b273abd2b4, type: 3}
 --- !u!1001 &5693013167257043765
@@ -1338,6 +1439,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5693013169060810393, guid: 1906e99c14cdc82409d7d59cbe5bc60b, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c1c526fddae8871449e7cc3429dcc2bf, type: 2}
     - target: {fileID: 5693013169060810394, guid: 1906e99c14cdc82409d7d59cbe5bc60b, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -1395,6 +1500,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5716456265190222357, guid: 542d667c6f0104f45bd3e43d619103c5, type: 3}
+      propertyPath: waveButtons.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5716456265190222357, guid: 542d667c6f0104f45bd3e43d619103c5, type: 3}
+      propertyPath: waveButtons.Array.data[0]
+      value: 
+      objectReference: {fileID: 1880525279}
+    - target: {fileID: 5716456265190222357, guid: 542d667c6f0104f45bd3e43d619103c5, type: 3}
+      propertyPath: waveButtons.Array.data[1]
+      value: 
+      objectReference: {fileID: 1718740927}
+    - target: {fileID: 5716456265190222357, guid: 542d667c6f0104f45bd3e43d619103c5, type: 3}
+      propertyPath: waveButtons.Array.data[2]
+      value: 
+      objectReference: {fileID: 1659712931}
     - target: {fileID: 6034140208120320633, guid: 542d667c6f0104f45bd3e43d619103c5, type: 3}
       propertyPath: m_RootOrder
       value: 10

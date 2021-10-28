@@ -71,7 +71,7 @@ public class PlayerTest : MonoBehaviour
             cm.Follow = transform;
         }
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetKeyDown(KeyCode.T))
         {
             waveAction();
         }
@@ -264,6 +264,11 @@ public class PlayerTest : MonoBehaviour
     public void LateUpdate()
     {
         rb.velocity = new Vector2(speed, rb.velocity.y);
+    }
+
+    public void returnToIdle()
+    {
+        animator.Play("Idle");
     }
 
     void changeXScale(float moveInputx)

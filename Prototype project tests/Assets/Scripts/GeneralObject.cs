@@ -19,6 +19,8 @@ public class GeneralObject : MonoBehaviour
     float angryTime;
     public string requiredWaveType;
 
+
+    public NPCUI NPCSUI;
     public objectType objectVar;
 
     
@@ -36,9 +38,10 @@ public class GeneralObject : MonoBehaviour
         //Interacted with
         if(isMad && !timerSet)
         {
-            
+            NPCSUI.setActiveStatus();
             playMadAnim = true;
             angryTime = angryTimer;
+            
             timerSet = true;
         }
 
@@ -65,9 +68,11 @@ public class GeneralObject : MonoBehaviour
 
     public void deactivateMadState()
     {
+        NPCSUI.setActiveStatus();
         isMad = false;
         timerSet = false;
         playMadAnim = false;
+        
         thisAnimator.speed = 1;
         thisAnimator.Play("Idle");
     }

@@ -19,7 +19,7 @@ public class GeneralObject : MonoBehaviour
     float angryTime;
     public string requiredWaveType;
 
-
+    public bool deactivateUI;
     public NPCUI NPCSUI;
     public objectType objectVar;
 
@@ -38,23 +38,14 @@ public class GeneralObject : MonoBehaviour
         //Interacted with
         if(isMad && !timerSet)
         {
-            NPCSUI.setActiveStatus();
+            
             playMadAnim = true;
             angryTime = angryTimer;
             
             timerSet = true;
         }
 
-        /*if (isMad)
-        {
-            angryTime -= GamePause.deltaTime;
-            if(angryTime <= 0)
-            {
-                
-                isMad = false;
-                timerSet = false;
-            }
-        }*/
+        
 
 
         

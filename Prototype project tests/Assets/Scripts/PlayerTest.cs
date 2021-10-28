@@ -237,7 +237,7 @@ public class PlayerTest : MonoBehaviour
                 }
                 else
                 {
-                    
+                    foundObject.deactivateUI = true;
                     foundObject.isMad = true;
                 }
             }

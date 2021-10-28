@@ -341,7 +341,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b36b3e4a5802d0848a6beecb275e383a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveButtons: []
+  waveButtons:
+  - {fileID: 8330279424524033673}
+  - {fileID: 175858398596381036}
+  - {fileID: 640486511387428053}
   parentPlayer: {fileID: 0}
 --- !u!114 &6145678272963863768
 MonoBehaviour:
@@ -714,7 +717,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &6034140208120320634
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -766,7 +769,7 @@ MonoBehaviour:
   jumpTimeCounter: 0.3
   currentWaveName: SimpleWave
   waveDistance: 2
-  isControlled: 0
+  isControlled: 1
   wavePos: {fileID: 6034140208324674556}
   interactables:
     serializedVersion: 2

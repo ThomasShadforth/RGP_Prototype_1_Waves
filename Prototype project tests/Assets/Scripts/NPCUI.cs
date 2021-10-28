@@ -1,24 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NPCUI : MonoBehaviour
 {
     [SerializeField]
     GeneralObject attachedNPC;
-    public bool isActive;
+    
     public GameObject UI;
+
+    public Sprite[] waveIcons;
+    public Image waveImage;
 
     string[] waveTypes;
     void Start()
     {
         attachedNPC = GetComponentInParent<GeneralObject>();
+
+        setWaveIcon();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isActive)
+        if (!attachedNPC.deactivateUI)
         {
             UI.SetActive(true);
         }
@@ -28,8 +35,21 @@ public class NPCUI : MonoBehaviour
         }
     }
 
+    
+
     public void setActiveStatus()
     {
-        Debug.Log("SETTING STATUS");
+        attachedNPC.deactivateUI = false;
+    }
+
+    public void setWaveIcon()
+    {
+        for(int i = 0; i < waveIcons.Length; i++)
+        {
+            if(waveIcons[i].name == attachedNPC.requiredWaveType)
+            {
+                waveImage.sprite = waveIcons[i];
+            }
+        }
     }
 }

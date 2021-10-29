@@ -10,7 +10,7 @@ public class PlayerTest : MonoBehaviour
 
     [Header("Movement")]
     public float speed;
-    const float maxSpeed = 3.0f;
+    const float maxSpeed = 1.5f;
     const float timeToReachMaxSpeed = .3f;
     const float timeToDecel = .3f;
     const float accelRate = (maxSpeed) / timeToReachMaxSpeed;
@@ -298,6 +298,22 @@ public class PlayerTest : MonoBehaviour
         } else if(foundObject.objectVar == objectType.Stairs)
         {
 
+        }
+    }
+
+    public void setWaveDistance(string waveName)
+    {
+        switch (waveName)
+        {
+            case "SimpleWave":
+                waveDistance = 2.0f;
+                break;
+            case "WaveyWave":
+                waveDistance = 2.5f;
+                break;
+            case "BouncyWave":
+                waveDistance = 1.5f;
+                break;
         }
     }
 }

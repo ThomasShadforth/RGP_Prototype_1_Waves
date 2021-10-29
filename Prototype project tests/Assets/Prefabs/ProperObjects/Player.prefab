@@ -345,6 +345,10 @@ MonoBehaviour:
   - {fileID: 8330279424524033673}
   - {fileID: 175858398596381036}
   - {fileID: 640486511387428053}
+  waveIcons:
+  - {fileID: 21300000, guid: f87d4d1356e16f54096ad097ffc7ef37, type: 3}
+  - {fileID: 21300000, guid: 4b8eea52ff4483242ba9d363d32ad3ee, type: 3}
+  - {fileID: 21300000, guid: 8f023d4b33d629b4ab4239c7224e357f, type: 3}
   parentPlayer: {fileID: 0}
 --- !u!114 &6145678272963863768
 MonoBehaviour:

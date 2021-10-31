@@ -6,6 +6,8 @@ using Cinemachine;
 public class PlayerTest : MonoBehaviour
 {
     bool isFacingRight;
+    float defaultGravScale;
+    public bool isClimbingLadder;
     Vector2 moveInput;
 
     [Header("Movement")]
@@ -52,6 +54,7 @@ public class PlayerTest : MonoBehaviour
 
         isFacingRight = true;
         moveInput.x = 1;
+        defaultGravScale = rb.gravityScale;
     }
 
     void FixedUpdate()
@@ -70,118 +73,135 @@ public class PlayerTest : MonoBehaviour
             cm.LookAt = transform;
             cm.Follow = transform;
         }
-
-        if (Input.GetKeyDown(KeyCode.T))
+        if (!isClimbingLadder)
         {
-            waveAction();
-        }
-        //Horizontal Movement
-        if (Input.GetButton("Left"))
-        {
-            //If the player is facing right, invert move input x, set the boolean to false and change
-            //The x scale
-            if (isFacingRight)
+            rb.gravityScale = defaultGravScale;
+
+            if (Input.GetKeyDown(KeyCode.T))
             {
-                moveInput.x = -1;
-                isFacingRight = false;
-                changeXScale(moveInput.x);
+                waveAction();
             }
-
-            
-            //while the speed is greater than 0, decelerate
-            if(speed > 0)
+            //Horizontal Movement
+            if (Input.GetButton("Left"))
             {
-                
-                speed += decelRate * 1.9f * GamePause.deltaTime;
-                //When the speed falls under 0, set it to -.5
-                if(speed < 0)
+                //If the player is facing right, invert move input x, set the boolean to false and change
+                //The x scale
+                if (isFacingRight)
                 {
-                    speed = -.5f;
+                    moveInput.x = -1;
+                    isFacingRight = false;
+                    changeXScale(moveInput.x);
                 }
-            //Accelerate to the left, slowly picking up speed while the speed has yet to reach the max
-            } else if(speed > -maxSpeed)
-            {
-                speed -= accelRate * GamePause.deltaTime;
 
-                //Once the speed has reached beyond the max, keep setting it to the negative max (For Left)
-                if(speed <= -maxSpeed)
+
+                //while the speed is greater than 0, decelerate
+                if (speed > 0)
                 {
-                    speed = -maxSpeed;
+
+                    speed += decelRate * 1.9f * GamePause.deltaTime;
+                    //When the speed falls under 0, set it to -.5
+                    if (speed < 0)
+                    {
+                        speed = -.5f;
+                    }
+                    //Accelerate to the left, slowly picking up speed while the speed has yet to reach the max
                 }
-            }
-        }
-
-        //
-        else if (Input.GetButton("Right"))
-        {
-            
-            if (!isFacingRight)
-            {
-                moveInput.x = 1;
-                isFacingRight = true;
-                changeXScale(moveInput.x);
-            }
-
-            
-            if(speed < 0)
-            {
-                speed -= decelRate * 1.9f * GamePause.deltaTime;
-                if(speed > 0)
+                else if (speed > -maxSpeed)
                 {
-                    speed = .5f;
-                }
-            } else if(speed < maxSpeed)
-            {
-                speed += accelRate * GamePause.deltaTime;
+                    speed -= accelRate * GamePause.deltaTime;
 
-                if(speed >= maxSpeed)
-                {
-                    speed = maxSpeed;
+                    //Once the speed has reached beyond the max, keep setting it to the negative max (For Left)
+                    if (speed <= -maxSpeed)
+                    {
+                        speed = -maxSpeed;
+                    }
                 }
             }
-        }
 
-        if(!Input.GetButton("Left") && !Input.GetButton("Right"))
-        {
-            speed -= (Mathf.Min(Mathf.Abs(speed * 2.2f), friction * 2.2f) * Mathf.Sign(speed) * maxSpeed * Time.deltaTime);
-        }
+            //
+            else if (Input.GetButton("Right"))
+            {
 
-        //Vertical Movement
-        if (Input.GetButtonDown("Jump") && isGrounded && jumpCount == 0){
-            rb.velocity = Vector2.up * jumpForce;
-            jumpTime = jumpTimeCounter;
-            isJumping = true;
-        }
+                if (!isFacingRight)
+                {
+                    moveInput.x = 1;
+                    isFacingRight = true;
+                    changeXScale(moveInput.x);
+                }
 
-        if(Input.GetButtonDown("Jump")  && jumpCount > 0)
-        {
-            jumpCount--;
-            rb.velocity = Vector2.up * jumpForce;
-            jumpTime = jumpTimeCounter;
-            isJumping = true;
-        }
 
-        if (Input.GetButton("Jump") && isJumping)
-        {
-            if(jumpTime > 0)
+                if (speed < 0)
+                {
+                    speed -= decelRate * 1.9f * GamePause.deltaTime;
+                    if (speed > 0)
+                    {
+                        speed = .5f;
+                    }
+                }
+                else if (speed < maxSpeed)
+                {
+                    speed += accelRate * GamePause.deltaTime;
+
+                    if (speed >= maxSpeed)
+                    {
+                        speed = maxSpeed;
+                    }
+                }
+            }
+
+            if (!Input.GetButton("Left") && !Input.GetButton("Right"))
+            {
+                speed -= (Mathf.Min(Mathf.Abs(speed * 2.2f), friction * 2.2f) * Mathf.Sign(speed) * maxSpeed * Time.deltaTime);
+            }
+
+            //Vertical Movement
+            if (Input.GetButtonDown("Jump") && isGrounded && jumpCount == 0)
             {
                 rb.velocity = Vector2.up * jumpForce;
-                jumpTime -= GamePause.deltaTime;
+                jumpTime = jumpTimeCounter;
+                isJumping = true;
             }
-            else
+
+            if (Input.GetButtonDown("Jump") && jumpCount > 0)
+            {
+                jumpCount--;
+                rb.velocity = Vector2.up * jumpForce;
+                jumpTime = jumpTimeCounter;
+                isJumping = true;
+            }
+
+            if (Input.GetButton("Jump") && isJumping)
+            {
+                if (jumpTime > 0)
+                {
+                    rb.velocity = Vector2.up * jumpForce;
+                    jumpTime -= GamePause.deltaTime;
+                }
+                else
+                {
+                    isJumping = false;
+                }
+            }
+
+            if (Input.GetButtonUp("Jump"))
             {
                 isJumping = false;
             }
-        }
 
-        if (Input.GetButtonUp("Jump"))
-        {
-            isJumping = false;
+            if (isGrounded)
+            {
+                jumpCount = extraJumps;
+            }
         }
-
-        if (isGrounded)
+        else
         {
-            jumpCount = extraJumps;
+            rb.gravityScale = 0;
+            speed = 0;
+
+            if (Input.GetButton("Jump"))
+            {
+                isClimbingLadder = false;
+            }
         }
 
         //Checks for Wave Action Input
@@ -294,7 +314,7 @@ public class PlayerTest : MonoBehaviour
             foundObject.doorOpen = true;
         } else if(foundObject.objectVar == objectType.Ladder)
         {
-
+            foundObject.ladderFormed = true;
         } else if(foundObject.objectVar == objectType.Stairs)
         {
 

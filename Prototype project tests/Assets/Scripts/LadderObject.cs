@@ -10,6 +10,7 @@ public class LadderObject : GeneralObject
     Animator animator;
     void Start()
     {
+        setBaseVals();
         animator = relatedLadder.GetComponent<Animator>();
     }
 
@@ -28,19 +29,29 @@ public class LadderObject : GeneralObject
         {
             StartCoroutine(formTheLadder());
         }
+
+        if (playMadAnim)
+        {
+            thisAnimator.Play("LadderMad");
+            thisAnimator.speed = madAnimSpeed;
+        }
+
     }
 
     public IEnumerator formTheLadder()
     {
         if (!canClimb)
         {
-            animator.Play("BuildLadder");
+            animator.Play("LadderBuild");
+            canClimb = true;
         }
-        yield return null;
+        yield return new WaitForSeconds(.6f);
+        enableDisableLadder();
     }
 
     void enableDisableLadder()
     {
-        //Have this enable/disable the collider
+        relatedLadder.GetComponent<Collider2D>().enabled = true;
+        
     }
 }

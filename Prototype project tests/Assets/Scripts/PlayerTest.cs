@@ -317,7 +317,7 @@ public class PlayerTest : MonoBehaviour
             foundObject.ladderFormed = true;
         } else if(foundObject.objectVar == objectType.Stairs)
         {
-
+            foundObject.stairsMade = true;
         }
     }
 

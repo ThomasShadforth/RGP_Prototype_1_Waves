@@ -34,7 +34,7 @@ public class playerLadderClimb : MonoBehaviour
             }
         }
 
-        Debug.Log(Vector2.Distance(transform.position, ladder.transform.position));
+        
     }
 
     private void OnTriggerEnter2D(Collider2D other)

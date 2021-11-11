@@ -263,7 +263,7 @@ MonoBehaviour:
   madAnimSpeed: 0
   requiredWaveType: BouncyWave
   deactivateUI: 0
-  NPCSUI: {fileID: 0}
+  NPCSUI: {fileID: 7809698299895034289}
   objectVar: 1
   relatedBridge: {fileID: 0}
   animator: {fileID: 0}

@@ -326,10 +326,10 @@ public class PlayerTest : MonoBehaviour
         switch (waveName)
         {
             case "SimpleWave":
-                waveDistance = 2.0f;
+                waveDistance = 2.5f;
                 break;
             case "WaveyWave":
-                waveDistance = 2.5f;
+                waveDistance = 3.5f;
                 break;
             case "BouncyWave":
                 waveDistance = 1.5f;

@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class LevelCheckpoint : MonoBehaviour
 {
     public bool levelEnd;
+    public bool lastLevel;
     void Start()
     {
         
@@ -23,7 +24,14 @@ public class LevelCheckpoint : MonoBehaviour
         {
             if (levelEnd)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                if (!lastLevel)
+                {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                }
+                else
+                {
+                    //Write code to open a UI panel perhaps, which lets the player go back to the menu
+                }
             }
         }
     }

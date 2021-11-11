@@ -257,6 +257,7 @@ public class PlayerTest : MonoBehaviour
                 }
                 else
                 {
+                    GameManager.instance.pointNum -= 5;
                     foundObject.deactivateUI = true;
                     foundObject.isMad = true;
                 }

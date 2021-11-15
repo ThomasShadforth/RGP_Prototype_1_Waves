@@ -237,6 +237,7 @@ Received Import Request.
   artifactKey: Guid(54b89487a4d682347a07b9cf9a7d00a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scenes/Level_3.unity using Guid(54b89487a4d682347a07b9cf9a7d00a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd45ea33413717eb3df8ebe05bc48ec15') in 0.012008 seconds 
   Import took 0.047283 seconds .
+<<<<<<< Updated upstream
 
 ========================================================================
 Received Import Request.
@@ -313,3 +314,14 @@ Start importing Assets/Scenes/Level_3.unity using Guid(54b89487a4d682347a07b9cf9
   Import took 0.041159 seconds .
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
+=======
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.952124 seconds.
+  path: Assets/Scenes/Level_2.unity
+  artifactKey: Guid(be65b5b852bb69e439562523d9f84dba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Level_2.unity using Guid(be65b5b852bb69e439562523d9f84dba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '116b98ccc1b7f0cc5d694ceda416f919') in 0.007602 seconds 
+  Import took 0.011642 seconds .
+
+>>>>>>> Stashed changes

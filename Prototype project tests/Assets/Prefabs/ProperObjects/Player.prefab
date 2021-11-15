@@ -764,7 +764,7 @@ MonoBehaviour:
   isClimbingLadder: 0
   speed: 0
   extraJumps: 0
-  jumpForce: 3
+  jumpForce: 2
   whatIsGround:
     serializedVersion: 2
     m_Bits: 512

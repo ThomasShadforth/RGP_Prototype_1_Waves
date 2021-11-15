@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public int pointNum;
     public float levelTimer;
     public float levelTime;
+
+    public Vector2 checkPointPos;
     void Start()
     {
         if(instance != null)
@@ -44,5 +46,18 @@ public class GameManager : MonoBehaviour
         //Update on UI
     }
 
+    public void movePosition()
+    {
+        PlayerTest[] playersInLevel = FindObjectsOfType<PlayerTest>();
+
+        for(int i = 0; i < playersInLevel.Length; i++)
+        {
+            if (playersInLevel[i].isControlled)
+            {
+                playersInLevel[i].transform.position = checkPointPos;
+                break;
+            }
+        }
+    }
     
 }

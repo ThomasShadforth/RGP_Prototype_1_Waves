@@ -26,7 +26,7 @@ public class StairsObject : GeneralObject
 
         if (playMadAnim)
         {
-            thisAnimator.Play("StairsMad");
+            thisAnimator.Play("StairMad");
             thisAnimator.speed = madAnimSpeed;
         }
 
